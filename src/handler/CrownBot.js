@@ -16,7 +16,7 @@ class CrownBot extends Client {
             host: 'localhost',
             dialect: 'sqlite',
             logging: false,
-            storage: 'database.sqlite'
+            storage: '/var/lib/crownbot/database.sqlite'
         })
         this.queryInterface = this.sequelize.getQueryInterface()
         this.models = {}
@@ -57,7 +57,7 @@ class CrownBot extends Client {
     }
 
     configureLogging() {
-        const p = path.join(__dirname, `../../logs`)
+        const p = path.join(__dirname, `/var/log/crownbot`)
         if (!fs.existsSync(p)) {
             fs.mkdirSync(p)
         }
