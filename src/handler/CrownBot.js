@@ -57,7 +57,7 @@ class CrownBot extends Client {
     }
 
     configureLogging() {
-        const p = path.join(__dirname, `/var/log/crownbot`)
+        const p = "/var/log/crownbot"
         if (!fs.existsSync(p)) {
             fs.mkdirSync(p)
         }
